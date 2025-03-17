@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Windows</title>
+
+    <!-- Daisy Ui cdn and tailwind css -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome cdn -->
+    <script src="https://kit.fontawesome.com/f5e67f8077.js" crossorigin="anonymous"></script>
+    <!-- custom css -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Exo 2", sans-serif;
+
+        }
+
+        .bangla-font {
+            font-family: "Hind Siliguri", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="">
+
+    <!-- nav part start -->
+    <section id="nav-section" class="hidden sticky top-0 z-10 backdrop-blur-md">
+        <div class=" bg-slate-200/80 border-b">
+
+            <nav class="w-11/12 mx-auto py-4 space-y-2 md:flex justify-between">
+                <div class="flex items-center">
+                    <div class="font-bold">English</div>
+                    <div><img src="./assets/logo.png" alt=""></div>
+                    <div class="bangla-font font-bold">জানালা</div>
+                </div>
+                <div class="flex items-start md:flex-row flex-col space-y-4">
+                    <button class="md:mb-0"><a role="button"
+                            class="hover:text-white focus:bg-blue-800 focus:text-white hover:bg-blue-800 transition-all delay-75 mx-1 border border-blue-800 text-blue-800 px-3 py-1 font-bold"
+                            href="#faq_section"><i class="fa-solid fa-question"></i> FAQ</a></button>
+                    <button class="md:mb-0"><a role="button"
+                            class="hover:text-white focus:bg-blue-800 focus:text-white hover:bg-blue-800 transition-all delay-75 mx-1 border border-blue-800 text-blue-800 px-3 py-1 font-bold"
+                            href="#learning-section"><i class="fa-solid fa-book-open"></i> Learn</a></button>
+                    <button id="logout-btn" class="hidden md:inline  md:mb-0"><a role="button"
+                            class="hover:text-white focus:bg-blue-800 focus:text-white hover:bg-blue-800 transition-all delay-75 mx-1 border border-blue-800 text-blue-800 px-3 py-1 font-bold"
+                            href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></button>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+
+    <!-- nav part end -->
+
+    <!-- Banner part start -->
+
+    <section id="banner-section" class="w-11/12 mx-auto">
+        <div class="flex md:flex-row flex-col justify-center md:justify-between items-center text-center md:text-start">
+            <div>
+                <h5 class="text-4xl font-bold"><span class="text-blue-800">English</span> is Easy!!</h5>
+
+                <P class="leading-7 mx-auto md:mx-0 mt-4 bangla-font w-3/5">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন।
+                    আপনি যদি নতুন হন
+                    অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের
+                    Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</P>
+
+                <div class="">
+                    <input id="name-field" type="text" class="input" placeholder="Enter Your Name" />
+                    <br>
+                    <input id="code-field" type="password" class="input my-3" placeholder="Enter Login Code(123456)" />
+                    <br>
+                    <button id="login-btn" class="btn btn-primary">Get Started</button>
+                </div>
+
+            </div>
+            <div>
+                <img src="./assets/hero-student.png" alt="">
+            </div>
+        </div>
+    </section>
+    <!-- Banner part end -->
+
+
+    <!-- Learning section start -->
+    <section id="learning-section" class="hidden w-11/12 mx-auto mt-20">
+        <h3 class="text-center text-3xl font-bold"><span class="text-blue-600">Let's</span> Learn Vocabularies </h3>
+
+        <div id="lesson-btn-container" class="text-center my-10">
+
+
+        </div>
+        <div id="loader-spinner" class="hidden text-center py-20"> <span class="loading loading-dots loading-xl"></span>
+        </div>
+        <div id="fixed-container" class="bg-slate-100 text-center py-14 rounded-md mt-5">
+            <p class="bangla-font">আপনি এখনো কোন Lesson Select করেন নি </p>
+            <h5 class="text-2xl mt-6 font-bold bangla-font">একটি Lesson Select করুন।</h5>
+        </div>
+        <div id="no-lessons" class="bg-slate-100 hidden text-center py-14 rounded-md mt-5">
+            <div class="mb-5">
+                <i class="fa-solid text-8xl text-red-300 fa-triangle-exclamation"></i>
+            </div>
+            <h4 class="text-2xl font-bold">No Word Found</h4>
+            <p class="bangla-font">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+            <h5 class="text-4xl mt-6 bangla-font">নেক্সট Lesson এ যান</h5>
+        </div>
+        <div id="word-container" class="bg-slate-100 grid grid-cols-2 md:grid-cols-3 gap-5">
+
+        </div>
+        <!-- demo -->
+
+
+
+
+    </section>
+
+    <!-- Learning section end -->
+
+    <!-- Modal start -->
+    <!-- Open the modal using ID.showModal() method -->
+    <button id="modal-btn" class="hidden btn" onclick="my_modal_1.showModal()">open modal</button>
+    <dialog id="my_modal_1" class="modal">
+        <div class="modal-box">
+            <div id="modal-container">
+
+            </div>
+
+            <div class="modal-action justify-start">
+                <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn btn-primary">Complete Learning</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Modal end -->
+
+    <!-- Faq Section start -->
+
+    <section id="faq_section" class="my-5 hidden">
+        <div class="w-11/12 mx-auto">
+            <div class="text-center text-3xl font-bold mb-14"><span class="text-blue-800">Frequently</span> Asked
+                Question</div>
+            <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                <input type="radio" name="my-accordion-3" checked="checked" />
+                <div class="collapse-title font-semibold">What is the difference between var, let, and const</div>
+                <div class="collapse-content text-sm">
+                    <span class="font-bold">var:</span> In javascript the var keyword is function-scoped, hoisted and
+                    initialized with
+                    undefined. It allows re-declaration.
+                    <br>
+                    <div class="my-4">
+                        <span class="font-bold">let:</span>
+                        The let keyword is block-scoped, hoisted but not initialized. Accessing the let variables before
+                        declaration result in ReferenceError. It doesn't allow re-declaration within the same scope.
+                    </div>
+
+                    <span class="font-bold">const:</span>
+                    const keyword is also block-scoped, hoisted but not initialized. Once assigned, const cannot be
+                    reassigned; however, if it holds an object or array, the properties can still be modified.
+
+                </div>
+            </div>
+            <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title font-semibold">What is the difference between map(), forEach(), and filter()
+                </div>
+                <div class="collapse-content text-sm">
+                    <span class="font-bold">forEach:</span> The forEach method executes a provided function once for
+                    each array element. It is typically used to perform side effects rather than to transform the array.
+
+                    <div class="my-4">
+                        <span class="font-bold">map:</span>
+                        The map method creates a new array populated with the results of calling a provided function on
+                        every element in the calling array. It is used to transform data.
+                    </div>
+                    <span class="font-bold">filter:</span>
+                    The filter method creates a new array with all elements that pass the test implemented by the
+                    provided function. It is used to include only certain elements from the original array.
+                </div>
+            </div>
+            <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title font-semibold">Explain arrow functions, and how they are different from
+                    regular function</div>
+                <div class="collapse-content text-sm">
+                    <span class="font-bold">Arrow functions: </span>
+                    Arrow functions are introduced in ES6. it is more concise way to define functions.They are best
+                    suited for short, simple functions, especially when you want to maintain a shorter, more readable
+                    syntax.
+                    <div class="mt-5">
+                        <span class="font-bold">Difference:</span>
+                        <p>
+                            Arrow functions and regular functions in JavaScript have key differences in syntax,
+                            behavior, and usage. Arrow functions (=>) provide a shorter and more concise syntax compared
+                            to regular functions, making them ideal for simple operations and callbacks. A major
+                            difference is how they handle this.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title font-semibold">How javascript promise works?</div>
+                <div class="collapse-content text-sm">
+                    In javascript promise is an asynchronous action that may complete at some point in the future and
+                    produce a value. This value is not necessarily known at the time of its creation. Once the value is
+                    produced, it notifies the user.
+
+                    Promises provide a robust way to wrap the result of asynchronous work, overcoming the problem of
+                    deeply nested callbacks.
+                </div>
+            </div>
+            <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title font-semibold">How closure works in javascript?</div>
+                <div class="collapse-content text-sm">
+                    In JavaScript, a closure is a fundamental concept that allows a function to remember and access
+                    variables from its surrounding scope, even after that outer function has finished executing.
+                    <br>
+                    When a function is created inside another function, the inner function act as a closure function.
+
+                    This closure includes the inner function itself and a reference to the outer function's variables.
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Faq Section end -->
+
+
+
+
+
+    <!-- Footer section start -->
+    <section class="bg-slate-100 p-6 mt-16">
+        <div class="w-11/12 mx-auto">
+            <div class="flex justify-between items-center">
+
+                <div>
+                    <div class="flex items-center">
+                        <div class="font-bold">English</div>
+                        <div><img src="./assets/logo.png" alt=""></div>
+                        <div class="bangla-font font-bold">জানালা</div>
+                    </div>
+                    <h4 class="my-2 bangla-font">ইংরেজি শিখুন সহজে</h4>
+                    <p>Providing ED-Tech Applications since 2025</p>
+
+                </div>
+                <div>
+                    <p class="mb-2">Follow Us</p>
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands mr-3 fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/" target="_blank"> <i class="fa-brands mr-3 fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank"> <i
+                            class="fa-brands mr-3 fa-instagram"></i></a>
+                    <a href="https://github.com/" target="_blank"><i class="fa-brands mr-3 fa-github"></i></a>
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer section end -->
+
+
+    <!-- demo 2 -->
+
+
+    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
